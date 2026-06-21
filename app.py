@@ -11,7 +11,7 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 # PAGE CONFIGURATION
 # ============================================================
 st.set_page_config(
-    page_title="StudyMate AI",
+    page_title="MindMesh AI",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -277,7 +277,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 st.markdown(
     """
     <div class="brand-bar">
-        <div class="brand-logo">Study<span>Mate</span> AI</div>
+        <div class="brand-logo">Mind<span>Mesh</span> AI</div>
         <div class="brand-tag">Kaggle Capstone Project</div>
     </div>
     """,
@@ -291,9 +291,8 @@ st.markdown(
     """
     <div class="hero-wrap">
         <div class="hero-eyebrow">Multi-Agent Learning System</div>
-        <div class="main-title">StudyMate AI</div>
-        <div class="sub-title">Your AI-powered study companion — built to explain concepts,
-        generate quizzes, and plan your learning, all in one place.</div>
+        <div class="main-title">MindMesh AI</div>
+        <div class="sub-title">Explain. Practice. Plan. Powered by collaborative AI agents.</div>
     </div>
     """,
     unsafe_allow_html=True
@@ -305,7 +304,7 @@ st.markdown(
 st.markdown(
     """
     <div class="description-box">
-    StudyMate AI is a <b>multi-agent educational assistant</b> that coordinates a team of
+    MindMesh AI is a <b>multi-agent educational assistant</b> that coordinates a team of
     specialized AI agents to help you learn more efficiently. One agent explains concepts in
     plain language, another builds quizzes to test your understanding, and another designs a
     study plan around your goals. Enter a topic below to get started.
@@ -423,7 +422,7 @@ with agent_col4:
 # ============================================================
 # "FEATURES" SECTION
 # ============================================================
-st.markdown('<div class="section-header">What StudyMate AI does</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-header">What MindMesh AI does</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-subtext">A focused toolset, not a bloated one.</div>', unsafe_allow_html=True)
 
 # Create four columns, one for each feature highlight
@@ -477,6 +476,6 @@ with feature_col4:
 # FOOTER SECTION
 # ============================================================
 st.markdown(
-    '<div class="footer-text">StudyMate AI • Multi-Agent Educational Assistant </div>',
+    '<div class="footer-text">MindMesh AI • Multi-Agent Educational Assistant </div>',
     unsafe_allow_html=True
 )
