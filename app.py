@@ -326,7 +326,7 @@ with input_col2:
     # Text input for the topic the student wants to learn
     topic = st.text_input(
         label="Enter a topic you want to learn",
-        placeholder="e.g. Newton's Laws of Motion",
+        placeholder="Enter any topic and let your AI agents teach it",
         label_visibility="collapsed"
     )
 
@@ -338,8 +338,26 @@ if generate_clicked:
     if topic.strip() == "":
         st.warning("Please enter a topic before generating your learning package.")
     else:
-        response = model.generate_content(topic)
-        st.write(response.text)
+        prompt = f"""
+        Create a learning package about {topic}.
+        Start directly with the content
+        
+        Do not include any introductory text or explanations about what you are doing.
+        Include:
+
+        📖 Explanation
+        - Beginner-friendly explanation
+
+        📝 Quiz
+        - 3 quiz questions with answers
+
+        📅 Study Plan
+        - A 3-day study plan
+        """
+
+        with st.spinner("AI agents are preparing your learning package..."):
+            response = model.generate_content(prompt)
+        st.markdown(response.text)
 
 # ============================================================
 # "MEET YOUR AI AGENTS" SECTION
