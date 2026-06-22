@@ -43,7 +43,7 @@ def quiz_agent(topic, explanation):
     return response.text
 
 
-def planner_agent(topic, explanation):
+def planner_agent(topic,explanation):
     prompt = f"""
     Based on this explanation:
 
@@ -394,8 +394,8 @@ if generate_clicked:
             with st.spinner("AI agents are preparing your learning package..."):
 
                 explanation = explainer_agent(topic)
-                quiz = quiz_agent(topic)
-                study_plan = planner_agent(topic)
+                quiz = quiz_agent(topic,explanation)
+                study_plan = planner_agent(topic,explanation)
 
             st.markdown("## 📖 Explainer Agent Output")
             st.markdown(explanation)
