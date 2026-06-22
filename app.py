@@ -7,6 +7,59 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+def explainer_agent(topic):
+    prompt = f"""
+    Explain {topic} in a beginner-friendly way.
+
+    Rules:
+    - Maximum 200 words
+    - Use simple language
+    - Include one example
+    - Use headings and bullet points
+    - Keep the explanation concise
+    """
+
+    response = model.generate_content(prompt)
+    return response.text
+
+
+def quiz_agent(topic, explanation):
+    prompt = f"""
+    Based on this explanation:
+
+    {explanation}
+
+    Create exactly 3 quiz questions.
+
+    Rules:
+    - 1 Multiple Choice
+    - 1 True/False
+    - 1 Scenario-based question
+    - Include answers
+    - Keep explanations short
+    """
+
+    response = model.generate_content(prompt)
+    return response.text
+
+
+def planner_agent(topic, explanation):
+    prompt = f"""
+    Based on this explanation:
+
+    {explanation}
+
+    Create a concise 3-day study plan.
+
+    Rules:
+    - Day 1, Day 2, Day 3
+    - Maximum 3 bullet points per day
+    - Keep it practical and beginner-friendly
+    """
+
+    response = model.generate_content(prompt)
+    return response.text
+
 # ============================================================
 # PAGE CONFIGURATION
 # ============================================================
@@ -337,26 +390,28 @@ if generate_clicked:
     if topic.strip() == "":
         st.warning("Please enter a topic before generating your learning package.")
     else:
-        prompt = f"""
-        Create a learning package about {topic}.
-        Start directly with the content
-        
-        Do not include any introductory text or explanations about what you are doing.
-        Include:
+        try:
+            with st.spinner("AI agents are preparing your learning package..."):
 
-        📖 Explanation
-        - Beginner-friendly explanation
+                explanation = explainer_agent(topic)
+                quiz = quiz_agent(topic)
+                study_plan = planner_agent(topic)
 
-        📝 Quiz
-        - 3 quiz questions with answers
+            st.markdown("## 📖 Explainer Agent Output")
+            st.markdown(explanation)
 
-        📅 Study Plan
-        - A 3-day study plan
-        """
+            st.markdown("## 📝 Quiz Agent Output")
+            st.markdown(quiz)
 
-        with st.spinner("AI agents are preparing your learning package..."):
-            response = model.generate_content(prompt)
-        st.markdown(response.text)
+            st.markdown("## 📅 Study Planner Agent Output")
+            st.markdown(study_plan)
+
+        except Exception as e:
+            st.error(
+                "⚠️ MindMesh AI is currently experiencing high demand. Please wait a minute and try again."
+            )
+
+            print(e)
 
 # ============================================================
 # "MEET YOUR AI AGENTS" SECTION
