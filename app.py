@@ -71,12 +71,12 @@ def generate_learning_package(topic):
 
     ## EXPLANATION
     - Beginner-friendly explanation
-    - Maximum 150 words
+    - Maximum 200 words
     - Include one example
 
     ### QUIZ
 
-    - Create EXACTLY 3 questions.
+    - Create EXACTLY 3 questions.cv
 
     Question 1 (Multiple Choice)
     Options MUST be formatted exactly like:
@@ -156,7 +156,7 @@ custom_css = """
 /* Import a clean, professional typeface pairing */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap');
 
-html, body, [class*="css"] {
+html, body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -401,6 +401,13 @@ div.stButton > button:active {
 
 # Inject the custom CSS into the app
 st.markdown(custom_css, unsafe_allow_html=True)
+st.markdown("""
+<style>
+p, div, span {
+    color: black !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # ============================================================
 # BRAND BAR — minimal top nav, like a real SaaS product header

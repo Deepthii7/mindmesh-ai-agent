@@ -76,7 +76,7 @@ def generate_learning_package(topic):
 
     ### QUIZ
 
-    - Create EXACTLY 3 questions.
+    - Create EXACTLY 3 questions.cv
 
     Question 1 (Multiple Choice)
     Options MUST be formatted exactly like:
@@ -135,7 +135,7 @@ def generate_learning_package(topic):
     text = text.replace(" b)", "\nb)")
     text = text.replace(" c)", "\nc)")
     text = text.replace(" d)", "\nd)")
-    print(text)
+    
     return text
 
 # ============================================================
