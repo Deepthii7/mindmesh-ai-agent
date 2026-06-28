@@ -13,10 +13,7 @@ Built with **Python, Streamlit, and Google Gemini** for the **Kaggle 5-Day AI Ag
 
 ---
 
-## 🎥 Demo
-
-- 📹 Demo Video: Coming Soon
-- 🌐 Live Demo: Coming Soon
+📹 Demo Video: *(Will be added before final submission.)*
 
 --- 
 
@@ -32,9 +29,9 @@ This project was developed as the capstone submission for Kaggle's 5-Day AI Agen
 
 ## 💡 Why MindMesh AI?
 
-Traditional AI chatbots provide answers, but they rarely guide the complete learning journey.
+Traditional AI assistants typically generate a single response, but they rarely guide users through an entire learning journey.
 
-MindMesh AI takes a multi-agent approach where specialized agents collaborate to explain concepts, assess understanding through quizzes, and generate personalized study plans, creating a structured learning experience rather than a single response.
+MindMesh AI addresses this limitation by using multiple specialized AI agents that collaborate to generate explanations, quizzes, and personalized study plans.
 
 ---
 
@@ -59,36 +56,13 @@ MindMesh AI addresses this challenge through a multi-agent architecture that gen
 
 ## 🧩 Multi-Agent Architecture
 
-MindMesh AI is structured around a **Coordinator Agent** that orchestrates three specialized agents, each responsible for one part of the learning experience.
+## 🧩 Multi-Agent Architecture
 
-```
-                         ┌────────────────────┐
-                         │   User Input Topic │
-                         └─────────┬──────────┘
-                                   │
-                                   ▼
-                         ┌────────────────────┐
-                         │  Coordinator Agent │
-                         └─────────┬──────────┘
-                                   │
-            ┌──────────────────────┼──────────────────────┐
-            ▼                      ▼                      ▼
-   ┌────────────────-─┐   ┌──────────────────┐   ┌────────────────────┐
-   │ Explainer Agent  │   │ Quiz Generator   │   │ Study Planner      │
-   │                  │   │ Agent            │   │ Agent              │
-   │ Generates a      │   │ Creates MCQ,     │   │ Builds a           │
-   │ beginner-friendly│   │ True/False, and  │   │ personalized       │
-   │ explanation of   │   │ scenario-based   │   │ 3-day study plan   │
-   │ the topic        │   │ quiz questions   │   │                    │
-   └────────────────-─┘   └──────────────────┘   └────────────────────┘
-            │                      │                      │
-            └──────────────────────┼──────────────────────┘
-                                   ▼
-                         ┌───────────────────-─┐
-                         │  Final Learning     │
-                         │  Package (Streamlit)│
-                         └──────────────────-──┘
-```
+MindMesh AI follows a coordinator-based multi-agent workflow. The Coordinator Agent receives the user's topic, delegates tasks to specialized agents, and combines their outputs into a complete learning package.
+
+<p align="center">
+  <img src="assets/architecture.png" alt="MindMesh AI Architecture" width="100%">
+</p>
 
 | Agent | Responsibility |
 |---|---|
@@ -115,9 +89,8 @@ MindMesh AI is structured around a **Coordinator Agent** that orchestrates three
 - **Language:** Python
 - **Frontend:** Streamlit
 - **LLM:** Google Gemini API
-- python-dotenv
-- Markdown 
-- Multi-agent Workflow 
+- **Environment:** python-dotenv
+- **Architecture:** Multi-Agent Workflow
 
 ---
 
@@ -128,8 +101,8 @@ Follow these steps to set up MindMesh AI locally.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/mindmesh-ai.git
-cd mindmesh-ai
+git clone https://github.com/Deepthii7/mindmesh-ai-agent.git
+cd mindmesh-ai-agent 
 ```
 
 ### 2. Create a virtual environment (recommended)

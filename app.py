@@ -90,7 +90,7 @@ def generate_learning_package(topic):
     - Maximum 200 words
     - Include one example
 
-    ### QUIZ
+    ## QUIZ
 
     - Create EXACTLY 3 questions.cv
 
