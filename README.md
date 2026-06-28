@@ -56,8 +56,6 @@ MindMesh AI addresses this challenge through a multi-agent architecture that gen
 
 ## 🧩 Multi-Agent Architecture
 
-## 🧩 Multi-Agent Architecture
-
 MindMesh AI follows a coordinator-based multi-agent workflow. The Coordinator Agent receives the user's topic, delegates tasks to specialized agents, and combines their outputs into a complete learning package.
 
 <p align="center">

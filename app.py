@@ -590,7 +590,7 @@ if generate_clicked:
         st.warning("Please enter a topic before generating your learning package.")
     else:
         try:
-            with st.spinner("AI agents are preparing your learning package..."):
+            with st.spinner(" 🤖  Coordinator Agent is orchestrating your learning package..."):
 
                 learning_package = coordinator_agent(topic)
 
